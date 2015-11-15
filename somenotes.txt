@@ -1,0 +1,36 @@
+
+
+The <list> element is used to set 
+the relationship between Account and Customer classes. 
+We used the cascade attribute in the <list>
+ element to tell Hibernate to persist the Account objects at the same time as the 
+ Customer objects. 
+ The name attribute is set to the defined List 
+ variable in the parent class, in our case it is account.
+
+
+
+The <key> element is the column in the Account 
+table that holds the foreign key to the parent object ie. table Customer.
+
+
+
+
+
+The <list-index> element is used to keep the position of the element 
+and map with the index column in the collection table. 
+The index of the persistent list starts at zero. 
+You could change this, for example, with <list-index base="1".../> in your mapping.
+
+
+The <one-to-many> element 
+indicates that one 
+Customer object relates to many 
+Account objects and, as such, the 
+Account object must have a 
+Customer parent associated with it. 
+You can use either
+ <one-to-one>, <many-to-one> or 
+ <many-to-many> elements based on your requirement. 
+ If we changed this example to use a many-to-many relationship, 
+ we would need an association table to map between the parent and the child objects.
